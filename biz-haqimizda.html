@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="uz" data-site-lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biz haqimizda | SoftData</title>
+<meta name="description" content="SoftData — Toshkentdagi IT kompaniya. Missiyamiz, qadriyatlarimiz va kichik-o'rta biznes bilan ishlash tamoyillarimiz.">
+<meta name="theme-color" content="#05070C">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="about" data-title-uz="Biz haqimizda | SoftData" data-title-ru="О нас | SoftData" data-title-en="About | SoftData">
+<!-- ===== ANIMATED BACKGROUND (video + aurora + grid + node-network) ===== -->
+<div class="bg-fx" aria-hidden="true">
+  <video class="fx-video" autoplay muted loop playsinline preload="auto" poster="assets/media/hero-poster.jpg">
+    <source src="assets/media/hero-loop.webm" type="video/webm">
+    <source src="assets/media/hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="fx-aurora"><span></span><span></span><span></span></div>
+  <div class="fx-grid"></div>
+  <canvas class="fx-canvas"></canvas>
+  <div class="fx-scan"></div>
+  <div class="fx-veil"></div>
+</div>
+
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo-mark" aria-label="SoftData"><img src="assets/media/softdata-logo-mark.png" alt="SoftData" width="455" height="96"></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link" data-nav="home"><span data-lang="uz">Bosh sahifa</span><span data-lang="ru">Главная</span><span data-lang="en">Home</span></a>
+      <a href="biz-haqimizda.html" class="nav-link" data-nav="about"><span data-lang="uz">Biz haqimizda</span><span data-lang="ru">О нас</span><span data-lang="en">About</span></a>
+      <a href="yechimlar.html" class="nav-link" data-nav="solutions"><span data-lang="uz">Yechimlar</span><span data-lang="ru">Решения</span><span data-lang="en">Solutions</span></a>
+      <a href="loyihalar.html" class="nav-link" data-nav="projects"><span data-lang="uz">Loyihalar</span><span data-lang="ru">Проекты</span><span data-lang="en">Projects</span></a>
+      <a href="hamkorlar.html" class="nav-link" data-nav="partners"><span data-lang="uz">Hamkorlar</span><span data-lang="ru">Партнеры</span><span data-lang="en">Partners</span></a>
+      <a href="aloqa.html" class="nav-link" data-nav="contact"><span data-lang="uz">Aloqa</span><span data-lang="ru">Контакты</span><span data-lang="en">Contact</span></a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-switch" id="langSwitch" type="button" aria-label="UZ / RU / EN">
+        <span class="lang-option" data-lang-btn="uz">UZ</span><span class="lang-sep">/</span><span class="lang-option" data-lang-btn="ru">RU</span><span class="lang-sep">/</span><span class="lang-option" data-lang-btn="en">EN</span>
+      </button>
+      <a href="aloqa.html" class="btn btn-accent header-cta"><span data-lang="uz">Murojaat qoldirish</span><span data-lang="ru">Оставить заявку</span><span data-lang="en">Send a request</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menyu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow"><span data-lang="uz">Biz haqimizda</span><span data-lang="ru">О нас</span><span data-lang="en">About</span></div>
+      <h1 class="type-on"><span data-lang="uz">Texnik jargonsiz, aniq natija bilan ishlaymiz</span><span data-lang="ru">Работаем без техжаргона, с конкретным результатом</span><span data-lang="en">We work without tech jargon, with concrete results</span></h1>
+      <p class="hero-lede">
+        <span data-lang="uz">SOFT DATA — Toshkentda joylashgan IT kompaniya. Avtomatlashtirish, xavfsizlik, parking va integratsiya bo'yicha ishlaymiz: loyihadan montajgacha, sozlashdan servisgacha. Har bir taklif "bu sizga nima beradi" degan savolga javob beradi.</span>
+        <span data-lang="ru">SOFT DATA — IT-компания в Ташкенте. Работаем по направлениям: автоматизация, безопасность, паркинг и интеграция — от проекта до монтажа, от настройки до сервиса. Каждое предложение отвечает на вопрос «что это даст вам».</span>
+        <span data-lang="en">SOFT DATA is an IT company based in Tashkent. We work across automation, security, parking and integration — from design to installation, from setup to service. Every proposal answers one question: what does this give you?</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- SYSTEM VISUAL -->
+  <section class="tight" data-reveal>
+    <div class="container">
+      <div class="service-visual" style="margin-top:0;">
+        <img src="assets/media/dir-integration.svg" alt="SoftData yagona boshqaruv markazi" loading="lazy" width="800" height="500">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Shlagbaum va to'siqlar</span><span data-lang="ru">Шлагбаумы и барьеры</span><span data-lang="en">Barriers and gates</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Raqam tanish (ANPR)</span><span data-lang="ru">Распознавание номеров</span><span data-lang="en">Plate recognition (ANPR)</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Videokuzatuv</span><span data-lang="ru">Видеонаблюдение</span><span data-lang="en">Video surveillance</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Kirish nazorati</span><span data-lang="ru">Контроль доступа</span><span data-lang="en">Access control</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Turniket va eshiklar</span><span data-lang="ru">Турникеты и двери</span><span data-lang="en">Turnstiles and doors</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Domofon</span><span data-lang="ru">Домофония</span><span data-lang="en">Intercom</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Signalizatsiya</span><span data-lang="ru">Сигнализация</span><span data-lang="en">Alarm systems</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Bo'sh joy tablosi</span><span data-lang="ru">Табло свободных мест</span><span data-lang="en">Free-space display</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Onlayn to'lov</span><span data-lang="ru">Онлайн-оплата</span><span data-lang="en">Online payment</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">1C integratsiyasi</span><span data-lang="ru">Интеграция с 1С</span><span data-lang="en">1C integration</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Ish vaqti hisobi</span><span data-lang="ru">Учёт рабочего времени</span><span data-lang="en">Time and attendance</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Telegram xabarnoma</span><span data-lang="ru">Уведомления в Telegram</span><span data-lang="en">Telegram alerts</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Server va arxiv</span><span data-lang="ru">Серверы и архив</span><span data-lang="en">Servers and archive</span></span>
+      <span class="chip"><i class="chip-dot"></i><span data-lang="uz">Texnik servis</span><span data-lang="ru">Техническое обслуживание</span><span data-lang="en">Technical service</span></span>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <section class="tight">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div class="head-text">
+          <div class="eyebrow">01 <span data-lang="uz">Qadriyatlar</span><span data-lang="ru">Ценности</span><span data-lang="en">Values</span></div>
+          <h2><span data-lang="uz">Qanday ishlashimizni belgilaydigan tamoyillar</span><span data-lang="ru">Принципы, которые определяют нашу работу</span><span data-lang="en">The principles that shape how we work</span></h2>
+        </div>
+      </div>
+      <div class="card-grid" data-reveal>
+        <div class="card">
+          <span class="card-index">01</span>
+          <h3><span data-lang="uz">Aniqlik</span><span data-lang="ru">Ясность</span><span data-lang="en">Clarity</span></h3>
+          <p><span data-lang="uz">Texnik atamalar o'rniga — nima qilinishi, nega va qachon tayyor bo'lishini oddiy tilda tushuntiramiz.</span><span data-lang="ru">Вместо терминов — простыми словами объясняем, что делается, зачем и когда будет готово.</span><span data-lang="en">Instead of technical terms, we explain in plain language what is being done, why, and when it will be ready.</span></p>
+        </div>
+        <div class="card">
+          <span class="card-index">02</span>
+          <h3><span data-lang="uz">Natija</span><span data-lang="ru">Результат</span><span data-lang="en">Result</span></h3>
+          <p><span data-lang="uz">Har bir loyiha o'lchanadigan maqsaddan boshlanadi: ko'proq murojaat, kamroq vaqt, kamroq xarajat.</span><span data-lang="ru">Каждый проект начинается с измеримой цели: больше заявок, меньше времени, меньше затрат.</span><span data-lang="en">Every project starts with a measurable goal: more enquiries, less time, lower costs.</span></p>
+        </div>
+        <div class="card">
+          <span class="card-index">03</span>
+          <h3><span data-lang="uz">Shaffoflik</span><span data-lang="ru">Прозрачность</span><span data-lang="en">Transparency</span></h3>
+          <p><span data-lang="uz">Aniq narx va muddat — ishlash jarayonida yashirin to'lov yoki kutilmagan o'zgarish bo'lmaydi.</span><span data-lang="ru">Точная цена и сроки — без скрытых платежей и неожиданных изменений в процессе.</span><span data-lang="en">A fixed price and timeline — no hidden fees and no surprise changes along the way.</span></p>
+        </div>
+        <div class="card">
+          <span class="card-index">04</span>
+          <h3><span data-lang="uz">Uzoq muddatli hamkorlik</span><span data-lang="ru">Долгосрочное партнёрство</span><span data-lang="en">Long-term partnership</span></h3>
+          <p><span data-lang="uz">Loyiha tugagach ham javobgarmiz — texnik yordam va tizimni rivojlantirishda davom etamiz.</span><span data-lang="ru">Мы остаёмся на связи и после сдачи проекта — техподдержка и развитие системы.</span><span data-lang="en">Our responsibility does not end at handover — we keep supporting and developing the system.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section>
+    <div class="container">
+      <div class="service-block" data-reveal>
+        <div>
+          <span class="service-tag">02</span>
+          <h3><span data-lang="uz">Kimlar bilan ishlaymiz</span><span data-lang="ru">С кем мы работаем</span><span data-lang="en">Who we work with</span></h3>
+        </div>
+        <div class="service-body">
+          <p><span data-lang="uz">O'zbekistondagi kichik va o'rta biznes egalari, korxona rahbarlari va IT bo'yicha qaror qabul qiluvchi menejerlar bilan ishlaymiz. Aksariyat mijozlarimiz uchun bu — birinchi jiddiy raqamlashtirish qadami, shuning uchun har bir bosqichni tushunarli qilib ko'rsatamiz.</span><span data-lang="ru">Мы работаем с владельцами малого и среднего бизнеса, руководителями предприятий и менеджерами, принимающими IT-решения в Узбекистане. Для многих клиентов это первый серьёзный шаг в цифровизации, поэтому мы объясняем каждый этап понятно.</span><span data-lang="en">We work with small and medium business owners, company directors and the managers who make IT decisions in Uzbekistan. For most of our clients this is their first serious step into digitalisation, so we make every stage easy to follow.</span></p>
+          <div class="tag-row">
+            <span class="tag"><span data-lang="uz">Chakana savdo</span><span data-lang="ru">Розничная торговля</span><span data-lang="en">Retail</span></span>
+            <span class="tag"><span data-lang="uz">Ishlab chiqarish</span><span data-lang="ru">Производство</span><span data-lang="en">Manufacturing</span></span>
+            <span class="tag"><span data-lang="uz">Xizmat ko'rsatish</span><span data-lang="ru">Сфера услуг</span><span data-lang="en">Services</span></span>
+            <span class="tag"><span data-lang="uz">Umumiy ovqatlanish</span><span data-lang="ru">Общепит</span><span data-lang="en">Food service</span></span>
+            <span class="tag"><span data-lang="uz">Ta'lim</span><span data-lang="ru">Образование</span><span data-lang="en">Education</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="service-block" data-reveal>
+        <div>
+          <span class="service-tag">03</span>
+          <h3><span data-lang="uz">Litsenziyalangan dasturiy ta'minot</span><span data-lang="ru">Лицензионное ПО</span><span data-lang="en">Licensed software</span></h3>
+        </div>
+        <div class="service-body">
+          <p><span data-lang="uz">O'zimiz ishlab chiqargan yechimlar bilan bir qatorda, litsenziyalangan dasturiy ta'minotni yetkazib berish xizmatini ham ko'rsatamiz — bu shuni anglatadiki, tizimlaringiz nafaqat sifatli, balki qonuniy asosda ham ishlaydi.</span><span data-lang="ru">Помимо собственных решений, мы поставляем лицензионное программное обеспечение — это значит, что ваши системы работают не только качественно, но и на законных основаниях.</span><span data-lang="en">Alongside our own solutions, we also supply licensed software — which means your systems run not only well, but fully within the law.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="tight on-dark" data-reveal>
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-value">60+</div>
+          <div class="stat-label"><span data-lang="uz">Amalga oshirilgan loyiha</span><span data-lang="ru">Реализованных проектов</span><span data-lang="en">Projects delivered</span></div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">5+</div>
+          <div class="stat-label"><span data-lang="uz">Yillik tajriba</span><span data-lang="ru">Лет опыта</span><span data-lang="en">Years of experience</span></div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">30+</div>
+          <div class="stat-label"><span data-lang="uz">Doimiy mijoz</span><span data-lang="ru">Постоянных клиентов</span><span data-lang="en">Returning clients</span></div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">5</div>
+          <div class="stat-label"><span data-lang="uz">Xizmat yo'nalishi</span><span data-lang="ru">Направлений услуг</span><span data-lang="en">Service areas</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band" data-reveal>
+    <div class="container">
+      <div class="eyebrow"><span data-lang="uz">Tanishaylik</span><span data-lang="ru">Познакомимся</span><span data-lang="en">Let's meet</span></div>
+      <h2><span data-lang="uz">Biznesingiz haqida gaplashaylik</span><span data-lang="ru">Расскажите о своём бизнесе</span><span data-lang="en">Tell us about your business</span></h2>
+      <div class="hero-actions">
+        <a href="aloqa.html" class="btn btn-accent btn-arrow"><span data-lang="uz">Murojaat qoldirish</span><span data-lang="ru">Оставить заявку</span><span data-lang="en">Send a request</span></a>
+        <a href="yechimlar.html" class="btn btn-outline"><span data-lang="uz">Yechimlarni ko'rish</span><span data-lang="ru">Смотреть решения</span><span data-lang="en">View solutions</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo-mark logo-full" aria-label="SoftData"><img src="assets/media/softdata-logo.png" alt="SoftData - Artificial Intelligence System" width="796" height="168"></a>
+      <p><span data-lang="uz">Har qanday mavjud resurslarni tizimli avtomatlashtirish yordamida yuqori xavfsizlikka erishiladi.</span><span data-lang="ru">Высокий уровень безопасности достигается системной автоматизацией любых имеющихся ресурсов.</span><span data-lang="en">Systematic automation across your existing resources delivers a high level of security.</span></p>
+    </div>
+    <div class="footer-col">
+      <span class="footer-title"><span data-lang="uz">Sahifalar</span><span data-lang="ru">Страницы</span><span data-lang="en">Pages</span></span>
+      <a href="biz-haqimizda.html"><span data-lang="uz">Biz haqimizda</span><span data-lang="ru">О нас</span><span data-lang="en">About</span></a>
+      <a href="yechimlar.html"><span data-lang="uz">Yechimlar</span><span data-lang="ru">Решения</span><span data-lang="en">Solutions</span></a>
+      <a href="loyihalar.html"><span data-lang="uz">Loyihalar</span><span data-lang="ru">Проекты</span><span data-lang="en">Projects</span></a>
+      <a href="hamkorlar.html"><span data-lang="uz">Hamkorlar</span><span data-lang="ru">Партнеры</span><span data-lang="en">Partners</span></a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-title"><span data-lang="uz">Yo'nalishlar</span><span data-lang="ru">Направления</span><span data-lang="en">Services</span></span>
+      <a href="yechimlar.html#automation">Automation</a>
+      <a href="yechimlar.html#security">Security</a>
+      <a href="yechimlar.html#parking">Parking</a>
+      <a href="yechimlar.html#integration">Integration</a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-title"><span data-lang="uz">Aloqa</span><span data-lang="ru">Контакты</span><span data-lang="en">Contact</span></span>
+      <a href="tel:+998507979779">+998 50 797-97-79</a>
+      <a href="mailto:info@softdata.uz">info@softdata.uz</a>
+      <span><span data-lang="uz">Toshkent, Yunusobod t., Bog'ishamol ko'chasi 235A</span><span data-lang="ru">Ташкент, Юнусабадский р-н, ул. Богишамол 235A</span><span data-lang="en">Tashkent, Yunusabad dist., Bogishamol st. 235A</span></span>
+    </div>
+  </div>
+  <div class="container footer-credit">
+    <a class="credit-sign" href="http://mirkhadjayev.uz/" target="_blank" rel="noopener noreferrer" aria-label="created by jmirkhadjayev - mirkhadjayev.uz">
+      <span class="credit-tag">&lt;/&gt;</span>
+      <span class="credit-label">created by</span>
+      <span class="credit-name">jmirkhadjayev</span>
+      <span class="credit-caret" aria-hidden="true"></span>
+    </a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/chat.js"></script>
+</body>
+</html>

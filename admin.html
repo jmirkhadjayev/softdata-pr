@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Matn boshqaruvi — SoftData admin</title>
+<meta name="theme-color" content="#05070C">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <span class="brand">
+      <img src="assets/media/softdata-logo-mark.png" alt="SoftData">
+      <b>admin</b>
+    </span>
+    <span class="counter" id="repoLabel"></span>
+    <span class="spacer"></span>
+    <span id="topActions" style="display:none; gap:10px; align-items:center;">
+      <button class="btn btn-ghost btn-sm" id="reloadBtn" type="button">Qayta yuklash</button>
+      <button class="btn btn-ghost btn-sm btn-danger" id="logoutBtn" type="button">Chiqish</button>
+    </span>
+  </div>
+</header>
+
+<!-- ===== LOGIN ===== -->
+<section class="screen is-on" id="loginScreen">
+  <div class="wrap">
+    <div class="login">
+      <h1>Matn boshqaruvi</h1>
+      <p class="sub">Saytdagi barcha matnlarni shu yerdan tahrirlaysiz. O'zbekcha yozasiz — rus va ingliz tiliga o'zi tarjima qiladi.</p>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="inOwner">GitHub foydalanuvchi</label>
+          <input type="text" id="inOwner" value="jmirkhadjayev" spellcheck="false">
+        </div>
+        <div class="field">
+          <label for="inRepo">Repozitoriy</label>
+          <input type="text" id="inRepo" value="softdata-pr" spellcheck="false">
+        </div>
+      </div>
+      <div class="field">
+        <label for="inBranch">Branch</label>
+        <input type="text" id="inBranch" value="main" spellcheck="false">
+      </div>
+      <div class="field">
+        <label for="inToken">GitHub token</label>
+        <input type="password" id="inToken" placeholder="github_pat_..." spellcheck="false" autocomplete="off">
+      </div>
+
+      <button class="btn btn-primary" id="loginBtn" type="button" style="width:100%; justify-content:center;">Kirish</button>
+
+      <div class="note">
+        <b>Token qanday olinadi:</b><br>
+        GitHub → Settings → Developer settings → Personal access tokens → <b>Fine-grained tokens</b> → Generate new token.
+        <br>Repository access: <code>faqat softdata-pr</code> · Permissions: <code>Contents: Read and write</code>.
+        <br><br>
+        Token faqat shu brauzerda (localStorage) saqlanadi, repozitoriyga tushmaydi va hech qayerga yuborilmaydi —
+        faqat GitHub API'ga. Boshqa odam kompyuteringizdan foydalansa panelga kira oladi, shuning uchun
+        umumiy kompyuterda ishlaganingizda <b>Chiqish</b> tugmasini bosing.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDITOR ===== -->
+<section class="screen" id="editorScreen">
+  <div class="wrap">
+    <div class="toolbar">
+      <input class="search" id="search" type="search" placeholder="Matn ichidan qidirish..." spellcheck="false">
+      <select class="sel" id="filter">
+        <option value="">Barcha sahifalar</option>
+        <option value="__dirty">Faqat o'zgarganlar</option>
+      </select>
+      <span class="counter" id="counter"></span>
+      <span class="spacer"></span>
+      <button class="btn" id="trAllBtn" type="button">O'zgarganlarni tarjima qilish</button>
+      <button class="btn btn-primary" id="saveBtn" type="button" disabled>Saqlash va saytga chiqarish</button>
+    </div>
+
+    <div id="list"></div>
+  </div>
+</section>
+
+<div class="bar" id="bar">
+  <span class="sp" id="barSpin" style="display:none"></span>
+  <span id="barText"></span>
+</div>
+
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

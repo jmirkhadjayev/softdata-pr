@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="uz" data-site-lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yechimlar — parking, xavfsizlik, avtomatlashtirish va integratsiya | SoftData</title>
+<meta name="description" content="SoftData yo'nalishlari: avtomatik parking (ANPR, shlagbaum), videokuzatuv va kirish nazorati, jarayon avtomatlashtirish, 1C va CRM integratsiyasi, servis.">
+<meta name="theme-color" content="#05070C">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="solutions" data-title-uz="Yechimlar — parking, xavfsizlik, avtomatlashtirish va integratsiya | SoftData" data-title-ru="Решения — паркинг, безопасность, автоматизация и интеграция | SoftData" data-title-en="Solutions — parking, security, automation and integration | SoftData">
+<!-- ===== ANIMATED BACKGROUND (video + aurora + grid + node-network) ===== -->
+<div class="bg-fx" aria-hidden="true">
+  <video class="fx-video" autoplay muted loop playsinline preload="auto" poster="assets/media/hero-poster.jpg">
+    <source src="assets/media/hero-loop.webm" type="video/webm">
+    <source src="assets/media/hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="fx-aurora"><span></span><span></span><span></span></div>
+  <div class="fx-grid"></div>
+  <canvas class="fx-canvas"></canvas>
+  <div class="fx-scan"></div>
+  <div class="fx-veil"></div>
+</div>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo-mark" aria-label="SoftData"><img src="assets/media/softdata-logo-mark.png" alt="SoftData" width="455" height="96"></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link" data-nav="home"><span data-lang="uz">Bosh sahifa</span><span data-lang="ru">Главная</span><span data-lang="en">Home</span></a>
+      <a href="biz-haqimizda.html" class="nav-link" data-nav="about"><span data-lang="uz">Biz haqimizda</span><span data-lang="ru">О нас</span><span data-lang="en">About</span></a>
+      <a href="yechimlar.html" class="nav-link" data-nav="solutions"><span data-lang="uz">Yechimlar</span><span data-lang="ru">Решения</span><span data-lang="en">Solutions</span></a>
+      <a href="loyihalar.html" class="nav-link" data-nav="projects"><span data-lang="uz">Loyihalar</span><span data-lang="ru">Проекты</span><span data-lang="en">Projects</span></a>
+      <a href="hamkorlar.html" class="nav-link" data-nav="partners"><span data-lang="uz">Hamkorlar</span><span data-lang="ru">Партнеры</span><span data-lang="en">Partners</span></a>
+      <a href="aloqa.html" class="nav-link" data-nav="contact"><span data-lang="uz">Aloqa</span><span data-lang="ru">Контакты</span><span data-lang="en">Contact</span></a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-switch" id="langSwitch" type="button" aria-label="UZ / RU / EN">
+        <span class="lang-option" data-lang-btn="uz">UZ</span><span class="lang-sep">/</span><span class="lang-option" data-lang-btn="ru">RU</span><span class="lang-sep">/</span><span class="lang-option" data-lang-btn="en">EN</span>
+      </button>
+      <a href="aloqa.html" class="btn btn-accent header-cta"><span data-lang="uz">Murojaat qoldirish</span><span data-lang="ru">Оставить заявку</span><span data-lang="en">Send a request</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menyu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow"><span data-lang="uz">Yechimlar</span><span data-lang="ru">Решения</span><span data-lang="en">Solutions</span></div>
+      <h1 class="type-on"><span data-lang="uz">Har bir yo'nalish — aniq muammoni yechadi</span><span data-lang="ru">Каждое направление решает конкретную задачу</span><span data-lang="en">Every service solves a specific problem</span></h1>
+      <p class="hero-lede">
+        <span data-lang="uz">Biz shunchaki "tizim o'rnatamiz" demaymiz — navbatni yo'q qilamiz, hodisani daqiqada topamiz, qo'lda kiritishni tugatamiz. Quyida har bir yo'nalish nima berishi yozilgan.</span>
+        <span data-lang="ru">Мы не просто «ставим систему» — убираем очереди, находим инцидент за минуту, заканчиваем с ручным вводом. Ниже — что даёт каждое направление.</span>
+        <span data-lang="en">We don't just "install a system" — we remove the queues, find the incident in a minute and end manual data entry. Below is what each service actually gives you.</span>
+      </p>
+      <div class="quick-nav">
+        <a href="#parking" class="chip"><i class="chip-dot"></i>Parking</a>
+        <a href="#security" class="chip"><i class="chip-dot"></i>Security</a>
+        <a href="#automation" class="chip"><i class="chip-dot"></i>Automation</a>
+        <a href="#integration" class="chip"><i class="chip-dot"></i>Integration</a>
+        <a href="#servis" class="chip"><i class="chip-dot"></i><span data-lang="uz">Servis</span><span data-lang="ru">Сервис</span><span data-lang="en">Service</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+
+      <div class="service-block" id="parking" data-reveal>
+        <div>
+          <span class="service-tag">01</span>
+          <h3>Parking<span class="dir-sub" data-lang="uz">Avtomatik parkovka</span><span class="dir-sub" data-lang="ru">Автоматический паркинг</span><span class="dir-sub" data-lang="en">Automated parking</span></h3>
+        </div>
+        <div class="service-body">
+          <p><span data-lang="uz">Shlagbaum, davlat raqamini tanish (ANPR), abonement va onlayn to'lov bitta tizimda. Mashina yaqinlashadi — kamera raqamni o'qiydi, ruxsat bo'lsa to'siq o'zi ochiladi. Bo'sh joylar tablosi real vaqtda yangilanadi, hisobot o'zi shakllanadi.</span><span data-lang="ru">Шлагбаум, распознавание госномеров (ANPR), абонементы и онлайн-оплата в одной системе. Машина подъезжает — камера считывает номер, при наличии доступа барьер открывается сам. Табло свободных мест обновляется в реальном времени, отчёт формируется автоматически.</span><span data-lang="en">Barriers, licence plate recognition (ANPR), season passes and online payment in one system. A car pulls up — the camera reads the plate and, if access is granted, the barrier opens by itself. The free-space display updates in real time and reports are generated automatically.</span></p>
+          <div class="tag-row">
+            <span class="tag"><span data-lang="uz">Shlagbaum va kirish nazorati</span><span data-lang="ru">Шлагбаумы и контроль въезда</span><span data-lang="en">Barriers and entry control</span></span>
+            <span class="tag"><span data-lang="uz">Avtomobil raqamlarini tanish</span><span data-lang="ru">Распознавание автомобильных номеров</span><span data-lang="en">Licence plate recognition</span></span>
+            <span class="tag"><span data-lang="uz">Onlayn to'lov</span><span data-lang="ru">Онлайн-оплата</span><span data-lang="en">Online payment</span></span>
+            <span class="tag"><span data-lang="uz">Bo'sh joylar monitoringi</span><span data-lang="ru">Мониторинг свободных мест</span><span data-lang="en">Free space monitoring</span></span>
+          </div>
+        </div>
+
+        <!-- ===== Parking · animated showcase (4 cards) ===== -->
+        <div class="pk-showcase">
+
+          <!-- 01 · Barriers and entry control -->
+          <article class="pk-card">
+            <div class="pk-head">
+              <span class="pk-num">01</span>
+              <h4><span data-lang="uz">Shlagbaum va kirish nazorati</span><span data-lang="ru">Шлагбаумы и контроль въезда</span><span data-lang="en">Barriers and entry control</span></h4>
+            </div>
+            <div class="pk-body">
+              <p class="pk-text"><span data-lang="uz">Avtomobillarning kirish va chiqishini avtomatlashtiramiz. Tizim ruxsat turini aniqlaydi, huquqlarni tekshiradi va shlagbaumni operatorsiz boshqaradi.</span><span data-lang="ru">Автоматизируем въезд и выезд автомобилей. Система определяет тип доступа, проверяет разрешения и управляет шлагбаумом без участия оператора.</span><span data-lang="en">We automate vehicle entry and exit. The system identifies the access type, checks the permissions and drives the barrier without an operator.</span></p>
+              <div class="pk-scene">
+                <svg class="pk-svg" viewBox="0 0 420 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="pkBeam" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#22D9FF" stop-opacity=".5"/>
+                      <stop offset="1" stop-color="#22D9FF" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="pkBody" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#59616C"/>
+                      <stop offset="0.5" stop-color="#3D444E"/>
+                      <stop offset="0.78" stop-color="#262B33"/>
+                      <stop offset="1" stop-color="#191D24"/>
+                    </linearGradient>
+                    <linearGradient id="pkGlassG" x1="0" y1="0" x2="0.25" y2="1">
+                      <stop offset="0" stop-color="#2B3542"/>
+                      <stop offset="1" stop-color="#0B0F16"/>
+                    </linearGradient>
+                    <linearGradient id="pkRim" x1="0" y1="0" x2="0.4" y2="1">
+                      <stop offset="0" stop-color="#D9BE93"/>
+                      <stop offset="0.5" stop-color="#A88656"/>
+                      <stop offset="1" stop-color="#6B5535"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0 168 H420" stroke="#1B2637" stroke-width="2"/>
+                  <path d="M8 182 h30 M56 182 h30 M104 182 h30 M152 182 h30 M200 182 h30 M248 182 h30 M296 182 h30 M344 182 h30 M392 182 h24" stroke="#1B2637" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+                  <rect x="372" y="52" width="34" height="34" rx="7" fill="#0B111C" stroke="#22D9FF" stroke-opacity=".4"/>
+                  <text class="pk-p" x="389" y="77" text-anchor="middle">P</text>
+                  <rect x="352" y="44" width="5" height="124" fill="#1F2A3A"/>
+                  <rect x="336" y="24" width="8" height="9" rx="2" fill="#35455C"/>
+                  <rect x="316" y="30" width="42" height="17" rx="5" fill="#22303F" stroke="#35455C"/>
+                  <circle cx="320" cy="38.5" r="4.5" fill="#0A0F18" stroke="#22D9FF" stroke-opacity=".7"/>
+                  <path class="pk-beam" d="M318 45 L262 156 L220 163 Z" fill="url(#pkBeam)"/>
+                  <rect x="330" y="106" width="16" height="62" rx="4" fill="#18202E" stroke="#253247"/>
+                  <circle class="pk-lamp" cx="338" cy="116" r="3.6" fill="#34E0A1"/>
+                  <g class="pk-boom">
+                    <rect x="240" y="112" width="98" height="9" rx="4.5" fill="#E8EEF8"/>
+                    <rect x="250" y="112" width="14" height="9" fill="#FF5F57"/>
+                    <rect x="278" y="112" width="14" height="9" fill="#FF5F57"/>
+                    <rect x="306" y="112" width="14" height="9" fill="#FF5F57"/>
+                  </g>
+
+                  <!-- Audi RS6 Avant · side profile -->
+                  <g class="pk-car">
+                    <ellipse cx="132" cy="167" rx="116" ry="5" fill="#000" opacity=".55"/>
+                    <path d="M26 152 L26 128 C26 116 29 108 37 103 L52 97 L142 95 C152 95 160 99 167 106 L182 117 C200 116 218 120 230 128 C235 132 237 136 237 142 L237 152 L210.5 152 A25 25 0 0 1 161.5 152 L88.5 152 A25 25 0 0 1 39.5 152 Z" fill="url(#pkBody)"/>
+                    <path d="M35 104 L52 96 L54 100 L38 108 Z" fill="#12161D"/>
+                    <path d="M52 97 L142 95" stroke="#0F1319" stroke-width="2.6" stroke-linecap="round"/>
+                    <path d="M56 102 L141 100 C149 100 155 103 160 109 L169 118 L60 121 Z" fill="url(#pkGlassG)"/>
+                    <path d="M56 102 L141 100 C149 100 155 103 160 109 L169 118 L60 121 Z" fill="none" stroke="#0E1219" stroke-width="2"/>
+                    <path d="M62 104 L78 103 L73 120 L62 120 Z" fill="#93A6BE" opacity=".16"/>
+                    <rect x="86" y="101" width="3.2" height="20" fill="#0E1219"/>
+                    <rect x="120" y="100" width="3.2" height="21" fill="#0E1219"/>
+                    <path d="M28 131 C92 126 164 124 234 129" stroke="#A9B7C9" stroke-width="1.4" fill="none" opacity=".28"/>
+                    <path d="M122 122 L121 150 M86 122 L85 150" stroke="#0E1219" stroke-width="1.3" opacity=".75"/>
+                    <path d="M92 147 L158 147 L155 153 L95 153 Z" fill="#10141B"/>
+                    <path d="M92 147 L158 147" stroke="#9AA7B8" stroke-width="1.1" opacity=".32"/>
+                    <rect x="98" y="128" width="12" height="3.4" rx="1.7" fill="#0E1219" opacity=".85"/>
+                    <rect x="136" y="127" width="12" height="3.4" rx="1.7" fill="#0E1219" opacity=".85"/>
+                    <path d="M170 114 L184 111 L186 116 L171 118 Z" fill="#1B2029"/>
+                    <path d="M27 124 L44 123 L44 131 L27 132 Z" fill="#C4353A"/>
+                    <path d="M27 124 L44 123 L44 126 L27 127 Z" fill="#FF8A82" opacity=".85"/>
+                    <path d="M214 124 L235 129 L235 136 L213 133 Z" fill="#E8F3FF"/>
+                    <path d="M216 127 L233 131" stroke="#22D9FF" stroke-width="1.7" stroke-linecap="round"/>
+                    <path d="M216 141 L235 143 L235 150 L214 149 Z" fill="#0C1017"/>
+                    <path d="M26 146 L37 146 L37 151 L26 151 Z" fill="#0C1017"/>
+                    <path d="M39.5 152 A25 25 0 0 1 88.5 152" fill="none" stroke="#0D1117" stroke-width="2.6"/>
+                    <path d="M161.5 152 A25 25 0 0 1 210.5 152" fill="none" stroke="#0D1117" stroke-width="2.6"/>
+                    <g>
+                      <circle cx="64" cy="147" r="21" fill="#0B0E13"/>
+                      <circle cx="64" cy="147" r="19.6" fill="none" stroke="#1C222B" stroke-width="2.6"/>
+                      <circle cx="64" cy="147" r="13.6" fill="#141922"/>
+                      <path d="M57.4 140.4 A9.4 9.4 0 0 0 57.4 153.6" fill="none" stroke="#D8382F" stroke-width="3.2" stroke-linecap="round"/>
+                      <g class="pk-spokes" style="transform-origin:64px 147px">
+                        <circle cx="64" cy="147" r="13.4" fill="none" stroke="url(#pkRim)" stroke-width="3.2"/>
+                        <g fill="url(#pkRim)">
+                          <rect x="62.1" y="134.6" width="3.8" height="11" rx="1.9"/>
+                          <rect x="62.1" y="134.6" width="3.8" height="11" rx="1.9" transform="rotate(72 64 147)"/>
+                          <rect x="62.1" y="134.6" width="3.8" height="11" rx="1.9" transform="rotate(144 64 147)"/>
+                          <rect x="62.1" y="134.6" width="3.8" height="11" rx="1.9" transform="rotate(216 64 147)"/>
+                          <rect x="62.1" y="134.6" width="3.8" height="11" rx="1.9" transform="rotate(288 64 147)"/>
+                        </g>
+                        <circle cx="64" cy="147" r="3.4" fill="#2A313B"/>
+                      </g>
+                    </g>
+                    <g>
+                      <circle cx="186" cy="147" r="21" fill="#0B0E13"/>
+                      <circle cx="186" cy="147" r="19.6" fill="none" stroke="#1C222B" stroke-width="2.6"/>
+                      <circle cx="186" cy="147" r="13.6" fill="#141922"/>
+                      <path d="M179.4 140.4 A9.4 9.4 0 0 0 179.4 153.6" fill="none" stroke="#D8382F" stroke-width="3.2" stroke-linecap="round"/>
+                      <g class="pk-spokes" style="transform-origin:186px 147px">
+                        <circle cx="186" cy="147" r="13.4" fill="none" stroke="url(#pkRim)" stroke-width="3.2"/>
+                        <g fill="url(#pkRim)">
+                          <rect x="184.1" y="134.6" width="3.8" height="11" rx="1.9"/>
+                          <rect x="184.1" y="134.6" width="3.8" height="11" rx="1.9" transform="rotate(72 186 147)"/>
+                          <rect x="184.1" y="134.6" width="3.8" height="11" rx="1.9" transform="rotate(144 186 147)"/>
+                          <rect x="184.1" y="134.6" width="3.8" height="11" rx="1.9" transform="rotate(216 186 147)"/>
+                          <rect x="184.1" y="134.6" width="3.8" height="11" rx="1.9" transform="rotate(288 186 147)"/>
+                        </g>
+                        <circle cx="186" cy="147" r="3.4" fill="#2A313B"/>
+                      </g>
+                    </g>
+                  </g>
+                  <g class="pk-check">
+                    <circle cx="168" cy="52" r="15" fill="#34E0A1" fill-opacity=".16" stroke="#34E0A1" stroke-opacity=".55"/>
+                    <path d="M161 52 l5 5 l9 -10" fill="none" stroke="#34E0A1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="pk-flow">
+              <div class="pk-step" style="--d:0s">
+                <span class="pk-step-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15h16v3a1 1 0 0 1-1 1h-1.6a1 1 0 0 1-1-1H7.6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" fill="currentColor" opacity=".55"/><path d="M5.2 14.4 6.9 9.6A2 2 0 0 1 8.8 8.3h6.4a2 2 0 0 1 1.9 1.3l1.7 4.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+                <span class="pk-step-txt"><span data-lang="uz">Avtomobil</span><span data-lang="ru">Автомобиль</span><span data-lang="en">Vehicle</span></span>
+              </div>
+              <i class="pk-arrow"></i>
+              <div class="pk-step" style="--d:.9s">
+                <span class="pk-step-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="8" width="13" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 12.5 21 9.5v6z" fill="currentColor" opacity=".7"/></svg></span>
+                <span class="pk-step-txt"><span data-lang="uz">Kamera</span><span data-lang="ru">Камера</span><span data-lang="en">Camera</span></span>
+              </div>
+              <i class="pk-arrow"></i>
+              <div class="pk-step" style="--d:1.8s">
+                <span class="pk-step-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5 19 6v5.5c0 4-3 7-7 9-4-2-7-5-7-9V6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12.2l2.2 2.2L15.2 10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="pk-step-txt"><span data-lang="uz">Ruxsat tekshiruvi</span><span data-lang="ru">Проверка доступа</span><span data-lang="en">Access check</span></span>
+              </div>
+              <i class="pk-arrow"></i>
+              <div class="pk-step" style="--d:2.7s">
+                <span class="pk-step-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="14" width="5" height="7" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="7" y="5" width="15" height="4" rx="2" transform="rotate(18 7 5)" fill="currentColor" opacity=".65"/></svg></span>
+                <span class="pk-step-txt"><span data-lang="uz">Shlagbaum</span><span data-lang="ru">Шлагбаум</span><span data-lang="en">Barrier</span></span>
+              </div>
+              <i class="pk-arrow"></i>
+              <div class="pk-step" style="--d:3.6s">
+                <span class="pk-step-ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 16.5V8h3.1a2.6 2.6 0 0 1 0 5.2H10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="pk-step-txt"><span data-lang="uz">Kirish</span><span data-lang="ru">Въезд</span><span data-lang="en">Entry</span></span>
+              </div>
+            </div>
+            <div class="pk-legend">
+              <span class="pk-chip"><i class="pk-dot pk-dot--ok"></i><span data-lang="uz">Ruxsat berilgan</span><span data-lang="ru">Доступ разрешён</span><span data-lang="en">Access granted</span></span>
+              <span class="pk-chip"><i class="pk-dot pk-dot--no"></i><span data-lang="uz">Ruxsat berilmagan</span><span data-lang="ru">Доступ запрещён</span><span data-lang="en">Access denied</span></span>
+              <span class="pk-chip"><i class="pk-dot pk-dot--cy"></i><span data-lang="uz">Abonement</span><span data-lang="ru">Абонемент</span><span data-lang="en">Season pass</span></span>
+              <span class="pk-chip"><i class="pk-dot pk-dot--vi"></i><span data-lang="uz">Mehmon kirishi</span><span data-lang="ru">Гостевой доступ</span><span data-lang="en">Guest access</span></span>
+            </div>
+          </article>
+
+          <!-- 02 · Licence plate recognition -->
+          <article class="pk-card">
+            <div class="pk-head">
+              <span class="pk-num">02</span>
+              <h4><span data-lang="uz">Avtomobil raqamlarini tanish</span><span data-lang="ru">Распознавание автомобильных номеров</span><span data-lang="en">Licence plate recognition</span></h4>
+            </div>
+            <div class="pk-body pk-body--anpr">
+              <p class="pk-text"><span data-lang="uz">Kameralar davlat raqamlarini avtomatik o'qiydi va ma'lumotni tizimga uzatadi. Bu avtomobilni aniqlash, kirishni nazorat qilish va kirish-chiqish tarixini yuritish imkonini beradi.</span><span data-lang="ru">Камеры автоматически распознают государственные регистрационные номера и передают данные в систему. Это позволяет идентифицировать автомобили, контролировать доступ и вести историю въездов и выездов.</span><span data-lang="en">Cameras read the registration plates automatically and pass the data to the system. That makes it possible to identify vehicles, control access and keep a full entry-exit history.</span></p>
+              <div class="pk-scene">
+                <svg class="pk-svg" viewBox="0 0 280 190" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="pkLampL" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0" stop-color="#EAF6FF"/>
+                      <stop offset="1" stop-color="#7FD7EE"/>
+                    </linearGradient>
+                    <linearGradient id="pkLampR" x1="1" y1="0" x2="0" y2="0">
+                      <stop offset="0" stop-color="#EAF6FF"/>
+                      <stop offset="1" stop-color="#7FD7EE"/>
+                    </linearGradient>
+                    <linearGradient id="pkFront" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#2B323C"/>
+                      <stop offset="0.5" stop-color="#1E242C"/>
+                      <stop offset="1" stop-color="#12171D"/>
+                    </linearGradient>
+                    <linearGradient id="pkRoof" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#414A55"/>
+                      <stop offset="1" stop-color="#242A33"/>
+                    </linearGradient>
+                    <pattern id="pkHex" width="9" height="8" patternUnits="userSpaceOnUse">
+                      <path d="M2.2 0 L6.8 0 L9 4 L6.8 8 L2.2 8 L0 4 Z" fill="none" stroke="#39434F" stroke-width="0.9"/>
+                    </pattern>
+                  </defs>
+                  <rect x="30" y="14" width="5" height="34" fill="#1F2A3A"/>
+                  <rect x="12" y="6" width="42" height="17" rx="5" fill="#22303F" stroke="#35455C"/>
+                  <circle cx="50" cy="14.5" r="4.5" fill="#0A0F18" stroke="#22D9FF" stroke-opacity=".7"/>
+                  <path class="pk-ray" d="M54 18 L104 131" stroke="#22D9FF" stroke-width="1.4" stroke-opacity=".6" stroke-dasharray="6 6"/>
+                  <path class="pk-ray pk-ray--b" d="M54 18 L176 114" stroke="#22D9FF" stroke-width="1.4" stroke-opacity=".6" stroke-dasharray="6 6"/>
+
+                  <!-- Audi · front (klassik texnik chizma) -->
+                  <g transform="translate(140 116) scale(1.06) translate(-140 -128)">
+                    <ellipse cx="140" cy="188" rx="96" ry="5" fill="#000" opacity=".45"/>
+                    <g stroke="#3E4855" stroke-width="1.4" fill="#0A0D12">
+                      <rect x="47" y="140" width="33" height="46" rx="13"/>
+                      <rect x="200" y="140" width="33" height="46" rx="13"/>
+                    </g>
+                    <g stroke="#2A323D" stroke-width="1.1" stroke-linecap="round" fill="none" opacity=".9">
+                      <path d="M52 172 H75"/><path d="M52 178 H75"/><path d="M54 183.5 H73"/>
+                      <path d="M205 172 H228"/><path d="M205 178 H228"/><path d="M207 183.5 H226"/>
+                    </g>
+                    <path d="M48 128 C48 112 54 100 66 95 L96 90 L110 62 Q112 58 117 58 L163 58 Q168 58 170 62 L184 90 L214 95 C226 100 232 112 232 128 L232 140 C231 157 224 169 209 171 L71 171 C56 169 49 157 48 140 Z" fill="url(#pkFront)" stroke="#77828F" stroke-width="1.6" stroke-linejoin="round"/>
+                    <path d="M101 89 L114 64 Q115 62 118 62 L162 62 Q165 62 166 64 L179 89 Z" fill="#0C1118" stroke="#4A5462" stroke-width="1.3" stroke-linejoin="round"/>
+                    <path d="M108 86 L118 66 L126 66 L114 86 Z" fill="#93A6BE" opacity=".1"/>
+                    <path d="M114 59 L166 59" stroke="#6E7986" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+                    <g fill="none" stroke="#4A5462" stroke-width="1.2" stroke-linecap="round">
+                      <path d="M94 93 L82 90 L80 97 L94 100 Z"/>
+                      <path d="M186 93 L198 90 L200 97 L186 100 Z"/>
+                      <path d="M60 99 C92 92 188 92 220 99" opacity=".7"/>
+                      <path d="M97 92 C90 100 81 110 74 123" opacity=".55"/>
+                      <path d="M183 92 C190 100 199 110 206 123" opacity=".55"/>
+                      <path d="M49 138 C50 154 57 166 70 169" opacity=".8"/>
+                      <path d="M231 138 C230 154 223 166 210 169" opacity=".8"/>
+                    </g>
+                    <path d="M100 104 L180 104 L186 124 L180 148 L100 148 L94 124 Z" fill="#0B0F15" stroke="#7F8A97" stroke-width="1.6" stroke-linejoin="round"/>
+                    <g stroke="#454F5C" stroke-width="1.1" stroke-linecap="round" fill="none">
+                      <path d="M99 110 H181"/><path d="M97 116 H183"/><path d="M95 122 H185"/><path d="M96 129 H184"/><path d="M98 136 H182"/><path d="M99.5 142.5 H180.5"/>
+                    </g>
+                    <g fill="none" stroke="#C9D2DE" stroke-width="1.5" opacity=".9">
+                      <circle cx="126" cy="98" r="4.6"/><circle cx="135.4" cy="98" r="4.6"/><circle cx="144.6" cy="98" r="4.6"/><circle cx="154" cy="98" r="4.6"/>
+                    </g>
+                    <path d="M54 106 C62 101 78 99 94 100 L96 112 C80 112 66 115 56 119 Z" fill="#0E141C" stroke="#7C8896" stroke-width="1.3" stroke-linejoin="round"/>
+                    <path d="M60 107.5 C70 104 82 103 92 103.5" stroke="#E8F3FF" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".92"/>
+                    <path d="M60 114 C70 111 80 110 90 110" stroke="#22D9FF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".55"/>
+                    <path d="M226 106 C218 101 202 99 186 100 L184 112 C200 112 214 115 224 119 Z" fill="#0E141C" stroke="#7C8896" stroke-width="1.3" stroke-linejoin="round"/>
+                    <path d="M220 107.5 C210 104 198 103 188 103.5" stroke="#E8F3FF" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".92"/>
+                    <path d="M220 114 C210 111 200 110 190 110" stroke="#22D9FF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".55"/>
+                    <g fill="#0B0F15" stroke="#4A5462" stroke-width="1.2" stroke-linejoin="round">
+                      <path d="M58 130 L88 128 L82 152 L62 154 Z"/>
+                      <path d="M222 130 L192 128 L198 152 L218 154 Z"/>
+                    </g>
+                    <g stroke="#2F3946" stroke-width="1" stroke-linecap="round" fill="none">
+                      <path d="M60 136 L86 134.5"/><path d="M60.5 142 L84.5 140.5"/><path d="M61 148 L83 146.5"/>
+                      <path d="M220 136 L194 134.5"/><path d="M219.5 142 L195.5 140.5"/><path d="M219 148 L197 146.5"/>
+                    </g>
+                    <path d="M70 163 L210 163 L207 171 L73 171 Z" fill="#131820" stroke="#3E4855" stroke-width="1.1"/>
+                    <!-- O'zbekiston davlat raqami: mintaqa | raqam | UZ -->
+                    <g>
+                      <rect x="104" y="123" width="72" height="21" rx="3" fill="#F5F7FA" stroke="#10151C" stroke-width="1.4"/>
+                      <path d="M119 123.7 L119 143.3" stroke="#10151C" stroke-width="1.4"/>
+                      <rect x="165" y="123.7" width="10.3" height="19.6" fill="#EDF1F6"/>
+                      <path d="M165 123.7 L165 143.3" stroke="#C7D0DB" stroke-width="1"/>
+                      <text class="pk-plate-svg" x="111.5" y="137.5" text-anchor="middle" font-size="8.5">01</text>
+                      <text class="pk-plate-svg" x="142" y="138" text-anchor="middle" font-size="9.5">K 997 FB</text>
+                      <g>
+                        <rect x="166.6" y="126" width="7.2" height="2" fill="#22A7E0"/>
+                        <rect x="166.6" y="128" width="7.2" height="2" fill="#FFFFFF"/>
+                        <rect x="166.6" y="130" width="7.2" height="2" fill="#1DA65A"/>
+                        <rect x="166.6" y="126" width="7.2" height="6" fill="none" stroke="#B9C3D0" stroke-width="0.5"/>
+                      </g>
+                      <text x="170.2" y="140.5" text-anchor="middle" font-size="5.4" font-weight="700" font-family="JetBrains Mono, Consolas, monospace" fill="#1F7FC4">UZ</text>
+                      <rect class="pk-scanline" x="104" y="123" width="7" height="21" fill="#22D9FF" opacity=".55"/>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <div class="pk-panel">
+                <span class="pk-panel-label"><span data-lang="uz">Aniqlandi:</span><span data-lang="ru">Распознано:</span><span data-lang="en">Recognised:</span></span>
+                <div class="pk-plate">
+                  <span class="pk-plate-reg">01</span>
+                  <span class="pk-plate-num">K 997 FB</span>
+                  <span class="pk-plate-uz"><i class="pk-flag"></i>UZ</span>
+                </div>
+                <dl class="pk-rows">
+                  <div class="pk-row" style="--d:.2s">
+                    <dt><span data-lang="uz">Holat:</span><span data-lang="ru">Статус:</span><span data-lang="en">Status:</span></dt>
+                    <dd class="is-cy"><span data-lang="uz">Abonement</span><span data-lang="ru">Абонемент</span><span data-lang="en">Season pass</span></dd>
+                  </div>
+                  <div class="pk-row" style="--d:.4s">
+                    <dt><span data-lang="uz">Kirish:</span><span data-lang="ru">Въезд:</span><span data-lang="en">Entry:</span></dt>
+                    <dd>10:42</dd>
+                  </div>
+                  <div class="pk-row" style="--d:.6s">
+                    <dt><span data-lang="uz">Turgan vaqti:</span><span data-lang="ru">Время пребывания:</span><span data-lang="en">Time on site:</span></dt>
+                    <dd><span data-lang="uz">2 s 18 daq</span><span data-lang="ru">2 ч 18 мин</span><span data-lang="en">2 h 18 min</span></dd>
+                  </div>
+                </dl>
+                <div class="pk-ok">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.2 12.3l2.6 2.6 5-5.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span data-lang="uz">Ruxsat berildi</span><span data-lang="ru">Доступ разрешён</span><span data-lang="en">Access granted</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03 · Online payment -->
+          <article class="pk-card">
+            <div class="pk-head">
+              <span class="pk-num">03</span>
+              <h4><span data-lang="uz">Onlayn to'lov</span><span data-lang="ru">Онлайн-оплата</span><span data-lang="en">Online payment</span></h4>
+            </div>
+            <div class="pk-body">
+              <p class="pk-text"><span data-lang="uz">Foydalanuvchi parkovkani chiqishdan oldin o'ziga qulay usulda to'laydi. Tizim narxni avtomatik hisoblaydi, tarifni hisobga oladi va to'lovni yagona bazada qayd etadi.</span><span data-lang="ru">Пользователь может оплатить парковку удобным способом до выезда. Система автоматически рассчитывает стоимость, учитывает тариф и фиксирует оплату в единой системе.</span><span data-lang="en">The driver can pay for parking in a convenient way before leaving. The system calculates the amount automatically, applies the tariff and records the payment in one place.</span></p>
+              <div class="pk-phones">
+                <div class="pk-phone">
+                  <span class="pk-notch"></span>
+                  <div class="pk-screen">
+                    <span class="pk-screen-title"><span data-lang="uz">Parkovka</span><span data-lang="ru">Парковка</span><span data-lang="en">Parking</span></span>
+                    <span class="pk-mini"><span data-lang="uz">Avtomobil raqami</span><span data-lang="ru">Номер автомобиля</span><span data-lang="en">Vehicle number</span></span>
+                    <div class="pk-plate pk-plate--sm">
+                      <span class="pk-plate-reg">01</span>
+                      <span class="pk-plate-num">K 997 FB</span>
+                      <span class="pk-plate-uz"><i class="pk-flag"></i>UZ</span>
+                    </div>
+                    <span class="pk-mini"><span data-lang="uz">Vaqt</span><span data-lang="ru">Время</span><span data-lang="en">Duration</span></span>
+                    <span class="pk-val"><span data-lang="uz">2 s 18 daq</span><span data-lang="ru">2 ч 18 мин</span><span data-lang="en">2 h 18 min</span></span>
+                    <span class="pk-mini"><span data-lang="uz">To'lovga</span><span data-lang="ru">К оплате</span><span data-lang="en">Total due</span></span>
+                    <span class="pk-sum">35 000 <em><span data-lang="uz">so'm</span><span data-lang="ru">сум</span><span data-lang="en">UZS</span></em></span>
+                    <span class="pk-btn"><span data-lang="uz">TO'LASH</span><span data-lang="ru">ОПЛАТИТЬ</span><span data-lang="en">PAY</span></span>
+                  </div>
+                </div>
+                <i class="pk-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </i>
+                <div class="pk-phone pk-phone--done">
+                  <span class="pk-notch"></span>
+                  <div class="pk-screen pk-screen--center">
+                    <span class="pk-tick">
+                      <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2.4"/><path class="pk-tick-path" d="M15 24.5l6.4 6.4L33.5 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span class="pk-done-title"><span data-lang="uz">To'lov tasdiqlandi</span><span data-lang="ru">Оплата подтверждена</span><span data-lang="en">Payment confirmed</span></span>
+                    <span class="pk-mini"><span data-lang="uz">Chiqish mumkin</span><span data-lang="ru">Можно выезжать</span><span data-lang="en">You may exit</span></span>
+                    <svg class="pk-exit" viewBox="0 0 60 46" aria-hidden="true" focusable="false">
+                      <path class="pk-exit-arrow" d="M30 20V4M24 10l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14 40h32v3a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1H19a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1z" fill="currentColor" opacity=".4"/>
+                      <path d="M15.4 39.4 17.6 33a2 2 0 0 1 1.9-1.3h21a2 2 0 0 1 1.9 1.3l2.2 6.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04 · Free space monitoring -->
+          <article class="pk-card">
+            <div class="pk-head">
+              <span class="pk-num">04</span>
+              <h4><span data-lang="uz">Bo'sh joylar monitoringi</span><span data-lang="ru">Мониторинг свободных мест</span><span data-lang="en">Free space monitoring</span></h4>
+            </div>
+            <div class="pk-body pk-body--lot">
+              <p class="pk-text"><span data-lang="uz">Tizim real vaqt rejimida parkovka joylarining bandligini ko'rsatadi va yuklamani nazorat qilish imkonini beradi. Ma'lumotlar operatorga ochiq va axborot tablosiga chiqariladi.</span><span data-lang="ru">Система в режиме реального времени отображает занятость парковочных мест и позволяет контролировать загрузку парковки. Данные доступны оператору и могут выводиться на информационные табло.</span><span data-lang="en">The system shows how many parking spaces are taken in real time and lets you keep an eye on the load. The data is available to the operator and can be shown on information displays.</span></p>
+              <div class="pk-scene">
+                <svg class="pk-svg pk-lot" viewBox="0 0 300 190" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+                  <symbol id="pkTopCar" viewBox="0 0 36 40">
+                    <rect x="1" y="1" width="34" height="38" rx="9" fill="#41527180"/>
+                    <rect x="2.5" y="2.5" width="31" height="35" rx="8" fill="#3C4D6B" stroke="#55688C" stroke-width="1"/>
+                    <path d="M8 10.5 C10 7.5 26 7.5 28 10.5 L28 15 L8 15 Z" fill="#0A0F18" fill-opacity=".62"/>
+                    <path d="M8 29.5 C10 32.5 26 32.5 28 29.5 L28 25.5 L8 25.5 Z" fill="#0A0F18" fill-opacity=".5"/>
+                    <rect x="9" y="17.5" width="18" height="5" rx="2.5" fill="#4E608429"/>
+                    <rect x="6" y="6" width="24" height="1.6" rx="0.8" fill="#22D9FF" fill-opacity=".35"/>
+                  </symbol>
+                  <rect x="1" y="1" width="298" height="188" rx="10" fill="#070B12" stroke="#1B2637"/>
+                  <g stroke="#253247" stroke-width="1.2" fill="none">
+                    <rect x="8" y="6" width="52" height="44" rx="3"/><rect x="66" y="6" width="52" height="44" rx="3"/><rect x="124" y="6" width="52" height="44" rx="3"/><rect x="182" y="6" width="52" height="44" rx="3"/><rect x="240" y="6" width="52" height="44" rx="3"/>
+                    <rect x="8" y="74" width="52" height="44" rx="3"/><rect x="66" y="74" width="52" height="44" rx="3"/><rect x="124" y="74" width="52" height="44" rx="3"/><rect x="182" y="74" width="52" height="44" rx="3"/><rect x="240" y="74" width="52" height="44" rx="3"/>
+                    <rect x="8" y="142" width="52" height="44" rx="3"/><rect x="66" y="142" width="52" height="44" rx="3"/><rect x="124" y="142" width="52" height="44" rx="3"/><rect x="182" y="142" width="52" height="44" rx="3"/><rect x="240" y="142" width="52" height="44" rx="3"/>
+                  </g>
+                  <g class="pk-free" fill="none" stroke="#34E0A1" stroke-width="1.6" stroke-dasharray="6 5">
+                    <rect x="8" y="6" width="52" height="44" rx="3"/><rect x="182" y="6" width="52" height="44" rx="3"/>
+                    <rect x="66" y="74" width="52" height="44" rx="3"/>
+                    <rect x="124" y="142" width="52" height="44" rx="3"/><rect x="240" y="142" width="52" height="44" rx="3"/>
+                  </g>
+                  <use href="#pkTopCar" x="74" y="8" width="36" height="40"/>
+                  <use href="#pkTopCar" x="132" y="8" width="36" height="40"/>
+                  <use href="#pkTopCar" x="248" y="8" width="36" height="40"/>
+                  <use href="#pkTopCar" x="16" y="76" width="36" height="40"/>
+                  <use href="#pkTopCar" x="132" y="76" width="36" height="40"/>
+                  <use href="#pkTopCar" x="248" y="76" width="36" height="40"/>
+                  <use href="#pkTopCar" x="16" y="144" width="36" height="40"/>
+                  <use href="#pkTopCar" x="74" y="144" width="36" height="40"/>
+                  <use href="#pkTopCar" x="190" y="144" width="36" height="40"/>
+                  <g class="pk-leaving">
+                    <use href="#pkTopCar" x="190" y="76" width="36" height="40"/>
+                  </g>
+                  <rect class="pk-freeing" x="182" y="74" width="52" height="44" rx="3" fill="none" stroke="#34E0A1" stroke-width="1.6" stroke-dasharray="6 5"/>
+                  <g class="pk-lane" stroke="#46587A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <path d="M40 62h34M56 56l6 6-6 6M74 62H40M46 56l-6 6 6 6"/>
+                    <path d="M156 62h34M172 56l6 6-6 6M190 62h-34M162 56l-6 6 6 6"/>
+                    <path d="M40 130h34M56 124l6 6-6 6M74 130H40M46 124l-6 6 6 6"/>
+                    <path d="M156 130h34M172 124l6 6-6 6M190 130h-34M162 124l-6 6 6 6"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="pk-stats">
+                <div class="pk-stat">
+                  <span class="pk-stat-key"><i class="pk-dot pk-dot--ok"></i><span data-lang="uz">Bo'sh</span><span data-lang="ru">Свободно</span><span data-lang="en">Free</span></span>
+                  <span class="pk-stat-val is-ok"><span class="pk-swap"><b class="pk-swap-a">05</b><b class="pk-swap-b">06</b></span><em>/ 15</em></span>
+                </div>
+                <div class="pk-stat">
+                  <span class="pk-stat-key"><i class="pk-dot pk-dot--cy"></i><span data-lang="uz">Band</span><span data-lang="ru">Занято</span><span data-lang="en">Occupied</span></span>
+                  <span class="pk-stat-val is-cy"><span class="pk-swap"><b class="pk-swap-a">10</b><b class="pk-swap-b">09</b></span><em>/ 15</em></span>
+                </div>
+                <div class="pk-stat">
+                  <span class="pk-stat-key"><i class="pk-dot pk-dot--vi"></i><span data-lang="uz">Yuklama</span><span data-lang="ru">Загрузка</span><span data-lang="en">Load</span></span>
+                  <span class="pk-stat-val is-vi"><span class="pk-swap"><b class="pk-swap-a">67%</b><b class="pk-swap-b">60%</b></span></span>
+                </div>
+              </div>
+            </div>
+            <div class="pk-legend">
+              <span class="pk-chip"><i class="pk-box pk-box--free"></i><span data-lang="uz">Bo'sh joy</span><span data-lang="ru">Свободное место</span><span data-lang="en">Free space</span></span>
+              <span class="pk-chip"><i class="pk-box pk-box--busy"></i><span data-lang="uz">Band joy</span><span data-lang="ru">Занятое место</span><span data-lang="en">Occupied space</span></span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+      <div class="service-block" id="security" data-reveal>
+        <div>
+          <span class="service-tag">02</span>
+          <h3>Security<span class="dir-sub" data-lang="uz">Xavfsizlik tizimlari</span><span class="dir-sub" data-lang="ru">Системы безопасности</span><span class="dir-sub" data-lang="en">Security systems</span></h3>
+        </div>
+        <div class="service-body">
+          <p><span data-lang="uz">Videokuzatuv, kirish nazorati, domofon va signalizatsiya — obyektingiz 24/7 nazoratda. Yozuvlar arxivda saqlanadi, hodisani sana va vaqt bo'yicha bir daqiqada topasiz. Telefoningizdan istalgan joydan kuzatishingiz mumkin.</span><span data-lang="ru">Видеонаблюдение, контроль доступа, домофония и сигнализация — объект под контролем 24/7. Записи хранятся в архиве, инцидент находится по дате и времени за минуту. Смотреть можно с телефона из любой точки.</span><span data-lang="en">Video surveillance, access control, intercom and alarms — your site is under control 24/7. Recordings are kept in the archive and any incident is found by date and time in under a minute. You can watch from your phone, from anywhere.</span></p>
+          <div class="tag-row">
+            <span class="tag"><span data-lang="uz">Videokuzatuv (CCTV)</span><span data-lang="ru">Видеонаблюдение (CCTV)</span><span data-lang="en">Video surveillance (CCTV)</span></span>
+            <span class="tag"><span data-lang="uz">Kirish nazorati (ACS)</span><span data-lang="ru">Контроль доступа (СКУД)</span><span data-lang="en">Access control (ACS)</span></span>
+            <span class="tag"><span data-lang="uz">Turniket va eshiklar</span><span data-lang="ru">Турникеты и двери</span><span data-lang="en">Turnstiles and doors</span></span>
+            <span class="tag"><span data-lang="uz">Domofon</span><span data-lang="ru">Домофония</span><span data-lang="en">Intercom</span></span>
+            <span class="tag"><span data-lang="uz">Signalizatsiya</span><span data-lang="ru">Сигнализация</span><span data-lang="en">Alarm systems</span></span>
+            <span class="tag"><span data-lang="uz">Arxiv va serverlar</span><span data-lang="ru">Архив и серверы</span><span data-lang="en">Archive and servers</span></span>
+          </div>
+          <div class="service-visual"><img src="assets/media/dir-security.svg" alt="Xavfsizlik tizimlari" loading="lazy" width="800" height="500"></div>
+        </div>
+      </div>
+      <div class="service-block" id="automation" data-reveal>
+        <div>
+          <span class="service-tag">03</span>
+          <h3>Automation<span class="dir-sub" data-lang="uz">Jarayon avtomatlashtirish</span><span class="dir-sub" data-lang="ru">Автоматизация процессов</span><span class="dir-sub" data-lang="en">Process automation</span></h3>
+        </div>
+        <div class="service-body">
+          <p><span data-lang="uz">Qo'lda bajarilayotgan ishlarni tizimga o'tkazamiz: kirish-chiqish qayd etiladi, ish vaqti o'zi hisoblanadi, hisobot va xabarnomalar avtomatik jo'natiladi. Odam omili kamayadi, ma'lumot esa har doim bir joyda bo'ladi.</span><span data-lang="ru">Переводим ручные операции в систему: вход-выход фиксируется, рабочее время считается само, отчёты и уведомления отправляются автоматически. Человеческий фактор снижается, а данные всегда в одном месте.</span><span data-lang="en">We move manual work into the system: entries and exits are logged, working time is calculated automatically, reports and notifications are sent on their own. Human error drops and the data always lives in one place.</span></p>
+          <div class="tag-row">
+            <span class="tag"><span data-lang="uz">Ish vaqti hisobi</span><span data-lang="ru">Учёт рабочего времени</span><span data-lang="en">Time and attendance</span></span>
+            <span class="tag"><span data-lang="uz">Avtomatik hisobotlar</span><span data-lang="ru">Автоматические отчёты</span><span data-lang="en">Automatic reports</span></span>
+            <span class="tag"><span data-lang="uz">Telegram xabarnoma</span><span data-lang="ru">Уведомления в Telegram</span><span data-lang="en">Telegram alerts</span></span>
+            <span class="tag"><span data-lang="uz">Stsenariylar va qoidalar</span><span data-lang="ru">Сценарии и правила</span><span data-lang="en">Scenarios and rules</span></span>
+            <span class="tag"><span data-lang="uz">Boshqaruv paneli</span><span data-lang="ru">Панель управления</span><span data-lang="en">Control panel</span></span>
+          </div>
+          <div class="service-visual"><img src="assets/media/dir-automation.svg" alt="Jarayon avtomatlashtirish" loading="lazy" width="800" height="500"></div>
+        </div>
+      </div>
+      <div class="service-block" id="integration" data-reveal>
+        <div>
+          <span class="service-tag">04</span>
+          <h3>Integration<span class="dir-sub" data-lang="uz">Tizim integratsiyasi</span><span class="dir-sub" data-lang="ru">Системная интеграция</span><span class="dir-sub" data-lang="en">System integration</span></h3>
+        </div>
+        <div class="service-body">
+          <p><span data-lang="uz">Alohida ishlayotgan tizimlarni bir-biriga ulaymiz: 1C, CRM, to'lov servislari, kameralar, turniketlar va shlagbaumlar yagona markazdan boshqariladi. Mavjud jihozlaringizni almashtirish shart emas — ko'p hollarda ularni ham ulash mumkin.</span><span data-lang="ru">Связываем разрозненные системы: 1С, CRM, платёжные сервисы, камеры, турникеты и шлагбаумы управляются из единого центра. Менять имеющееся оборудование не обязательно — чаще всего его тоже можно подключить.</span><span data-lang="en">We connect systems that currently run in isolation: 1C, CRM, payment services, cameras, turnstiles and barriers are managed from a single centre. You don't have to replace your existing equipment — in most cases it can be connected too.</span></p>
+          <div class="tag-row">
+            <span class="tag"><span data-lang="uz">1C integratsiyasi</span><span data-lang="ru">Интеграция с 1С</span><span data-lang="en">1C integration</span></span>
+            <span class="tag"><span data-lang="uz">CRM/ERP ulanishi</span><span data-lang="ru">Подключение CRM/ERP</span><span data-lang="en">CRM/ERP connection</span></span>
+            <span class="tag"><span data-lang="uz">To'lov tizimlari</span><span data-lang="ru">Платёжные системы</span><span data-lang="en">Payment systems</span></span>
+            <span class="tag"><span data-lang="uz">API va webhook</span><span data-lang="ru">API и webhook</span><span data-lang="en">API and webhooks</span></span>
+            <span class="tag"><span data-lang="uz">Telegram bot</span><span data-lang="ru">Telegram-бот</span><span data-lang="en">Telegram bot</span></span>
+          </div>
+          <div class="service-visual"><img src="assets/media/dir-integration.svg" alt="Tizim integratsiyasi" loading="lazy" width="800" height="500"></div>
+        </div>
+      </div>
+      <div class="service-block" id="servis" data-reveal>
+        <div>
+          <span class="service-tag">05</span>
+          <h3><span data-lang="uz">Servis</span><span data-lang="ru">Сервис</span><span data-lang="en">Service</span><span class="dir-sub" data-lang="uz">Servis va yetkazib berish</span><span class="dir-sub" data-lang="ru">Сервис и поставка</span><span class="dir-sub" data-lang="en">Service and supply</span></h3>
+        </div>
+        <div class="service-body">
+          <p><span data-lang="uz">Jihozni yetkazib beramiz, montaj qilamiz va keyin ham yolg'iz qoldirmaymiz: kafolat, rejali texnik ko'rik va chaqiruv bo'yicha chiqish. Litsenziyalangan dasturiy ta'minot bilan ta'minlaymiz — tekshiruvlarda muammo bo'lmaydi.</span><span data-lang="ru">Поставляем оборудование, монтируем и не оставляем один на один с системой: гарантия, плановое обслуживание и выезд по вызову. Обеспечиваем лицензионным ПО — при проверках проблем не будет.</span><span data-lang="en">We supply the equipment, install it and don't leave you alone with the system afterwards: warranty, scheduled maintenance and call-out visits. We provide licensed software, so inspections hold no surprises.</span></p>
+          <div class="tag-row">
+            <span class="tag"><span data-lang="uz">Jihoz yetkazib berish</span><span data-lang="ru">Поставка оборудования</span><span data-lang="en">Equipment supply</span></span>
+            <span class="tag"><span data-lang="uz">Montaj va sozlash</span><span data-lang="ru">Монтаж и настройка</span><span data-lang="en">Installation and setup</span></span>
+            <span class="tag"><span data-lang="uz">Kafolat va servis</span><span data-lang="ru">Гарантия и сервис</span><span data-lang="en">Warranty and service</span></span>
+            <span class="tag"><span data-lang="uz">Litsenziyalangan DT</span><span data-lang="ru">Лицензионное ПО</span><span data-lang="en">Licensed software</span></span>
+            <span class="tag"><span data-lang="uz">Xodimlarni o'qitish</span><span data-lang="ru">Обучение персонала</span><span data-lang="en">Staff training</span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="on-dark">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div class="head-text">
+          <div class="eyebrow">FAQ</div>
+          <h2><span data-lang="uz">Ko'p beriladigan savollar</span><span data-lang="ru">Частые вопросы</span><span data-lang="en">Frequently asked questions</span></h2>
+        </div>
+      </div>
+      <div data-reveal>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span><span data-lang="uz">Loyiha qancha vaqtda tayyor bo'ladi?</span><span data-lang="ru">Сколько времени занимает проект?</span><span data-lang="en">How long does a project take?</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><span data-lang="uz">Kichik obyekt (bitta kirish, 8–16 kamera) odatda 5–10 ish kunida topshiriladi. Yirik parking yoki ko'p kirishli obyekt uchun muddat auditdan keyin aniqlanadi va shartnomada qayd etiladi.</span><span data-lang="ru">Небольшой объект (один въезд, 8–16 камер) обычно сдаётся за 5–10 рабочих дней. По крупному паркингу или объекту с несколькими въездами срок определяется после аудита и фиксируется в договоре.</span><span data-lang="en">A small site (one entrance, 8–16 cameras) is usually handed over in 5–10 working days. For a large car park or a site with several entrances, the timeline is set after the audit and written into the contract.</span></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span><span data-lang="uz">Mavjud kamera va shlagbaumlarimni ishlatib bo'ladimi?</span><span data-lang="ru">Можно ли использовать уже установленные камеры и шлагбаум?</span><span data-lang="en">Can I keep my existing cameras and barriers?</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><span data-lang="uz">Ko'p hollarda ha. Auditda mavjud jihozlarni tekshiramiz: qaysilari yangi tizimga ulanadi, qaysilari almashtirilishi kerakligini sababi bilan aytamiz. Ishlaydigan jihozni shunchaki sotish uchun almashtirishni taklif qilmaymiz.</span><span data-lang="ru">В большинстве случаев да. На аудите проверяем оборудование: что подключается к новой системе, а что стоит заменить — и объясняем почему. Мы не предлагаем менять работающее оборудование ради продажи.</span><span data-lang="en">In most cases, yes. During the audit we check your equipment: we tell you what will connect to the new system, what should be replaced, and why. We never suggest replacing working equipment just to make a sale.</span></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span><span data-lang="uz">Narx nimalardan tashkil topadi?</span><span data-lang="ru">Из чего складывается цена?</span><span data-lang="en">What makes up the price?</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><span data-lang="uz">Jihoz narxi + montaj va sozlash + kabel va materiallar. Smetada har bir pozitsiya alohida ko'rsatiladi. Kelishilgan narx shartnomada qayd etiladi — ish jarayonida yashirin qo'shimchalar chiqmaydi.</span><span data-lang="ru">Стоимость оборудования + монтаж и настройка + кабель и материалы. В смете каждая позиция указана отдельно. Согласованная цена фиксируется в договоре — скрытых доплат в процессе не появляется.</span><span data-lang="en">Equipment cost + installation and setup + cable and materials. Every line is itemised in the quote. The agreed price is fixed in the contract — no hidden extras appear during the work.</span></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span><span data-lang="uz">Ishga tushgandan keyin qo'llab-quvvatlash bormi?</span><span data-lang="ru">Есть ли поддержка после запуска?</span><span data-lang="en">Is there support after launch?</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><span data-lang="uz">Ha. Kafolat muddatida nosozliklarni bepul bartaraf etamiz, keyin esa servis shartnomasi bo'yicha rejali ko'rik va chaqiruv bo'yicha chiqish mavjud. Servisga chiqish odatda 48 soat ichida amalga oshiriladi.</span><span data-lang="ru">Да. В течение гарантийного срока устраняем неисправности бесплатно, далее — по договору сервисного обслуживания: плановые осмотры и выезд по вызову. Выезд сервиса обычно в течение 48 часов.</span><span data-lang="en">Yes. During the warranty period we fix faults free of charge; after that a service contract covers scheduled inspections and call-out visits. A service visit normally happens within 48 hours.</span></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span><span data-lang="uz">Toshkentdan tashqarida ishlaysizmi?</span><span data-lang="ru">Работаете ли за пределами Ташкента?</span><span data-lang="en">Do you work outside Tashkent?</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><span data-lang="uz">Ha, viloyatlarda ham loyihalarni amalga oshiramiz. Bunday hollarda montaj grafigi va servis shartlari alohida kelishiladi.</span><span data-lang="ru">Да, реализуем проекты и в регионах. В таких случаях график монтажа и условия сервиса согласуются отдельно.</span><span data-lang="en">Yes, we deliver projects in the regions as well. In those cases the installation schedule and service terms are agreed separately.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band" data-reveal>
+    <div class="container">
+      <div class="eyebrow"><span data-lang="uz">Qaysi yechim kerak?</span><span data-lang="ru">Какое решение нужно?</span><span data-lang="en">Which solution do you need?</span></div>
+      <h2><span data-lang="uz">Obyektga chiqib, bepul aniqlab beramiz</span><span data-lang="ru">Приедем на объект и определим бесплатно</span><span data-lang="en">We'll visit your site and work it out free of charge</span></h2>
+      <p class="hero-lede"><span data-lang="uz">Mutaxassis obyektni ko'radi, nima kerakligini va qancha turishini aniq aytadi — majburiyatsiz.</span><span data-lang="ru">Специалист осмотрит объект и точно скажет, что нужно и сколько это стоит — без обязательств.</span><span data-lang="en">A specialist will inspect the site and tell you exactly what is needed and what it costs — with no obligation.</span></p>
+      <div class="hero-actions">
+        <a href="aloqa.html" class="btn btn-accent btn-arrow"><span data-lang="uz">Murojaat qoldirish</span><span data-lang="ru">Оставить заявку</span><span data-lang="en">Send a request</span></a>
+        <a href="tel:+998507979779" class="btn btn-outline">+998 50 797-97-79</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo-mark logo-full" aria-label="SoftData"><img src="assets/media/softdata-logo.png" alt="SoftData - Artificial Intelligence System" width="796" height="168"></a>
+      <p><span data-lang="uz">Har qanday mavjud resurslarni tizimli avtomatlashtirish yordamida yuqori xavfsizlikka erishiladi.</span><span data-lang="ru">Высокий уровень безопасности достигается системной автоматизацией любых имеющихся ресурсов.</span><span data-lang="en">Systematic automation across your existing resources delivers a high level of security.</span></p>
+    </div>
+    <div class="footer-col">
+      <span class="footer-title"><span data-lang="uz">Sahifalar</span><span data-lang="ru">Страницы</span><span data-lang="en">Pages</span></span>
+      <a href="biz-haqimizda.html"><span data-lang="uz">Biz haqimizda</span><span data-lang="ru">О нас</span><span data-lang="en">About</span></a>
+      <a href="yechimlar.html"><span data-lang="uz">Yechimlar</span><span data-lang="ru">Решения</span><span data-lang="en">Solutions</span></a>
+      <a href="loyihalar.html"><span data-lang="uz">Loyihalar</span><span data-lang="ru">Проекты</span><span data-lang="en">Projects</span></a>
+      <a href="hamkorlar.html"><span data-lang="uz">Hamkorlar</span><span data-lang="ru">Партнеры</span><span data-lang="en">Partners</span></a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-title"><span data-lang="uz">Yo'nalishlar</span><span data-lang="ru">Направления</span><span data-lang="en">Services</span></span>
+      <a href="yechimlar.html#automation">Automation</a>
+      <a href="yechimlar.html#security">Security</a>
+      <a href="yechimlar.html#parking">Parking</a>
+      <a href="yechimlar.html#integration">Integration</a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-title"><span data-lang="uz">Aloqa</span><span data-lang="ru">Контакты</span><span data-lang="en">Contact</span></span>
+      <a href="tel:+998507979779">+998 50 797-97-79</a>
+      <a href="mailto:info@softdata.uz">info@softdata.uz</a>
+      <span><span data-lang="uz">Toshkent, Yunusobod t., Bog'ishamol ko'chasi 235A</span><span data-lang="ru">Ташкент, Юнусабадский р-н, ул. Богишамол 235A</span><span data-lang="en">Tashkent, Yunusabad dist., Bogishamol st. 235A</span></span>
+    </div>
+  </div>
+  <div class="container footer-credit">
+    <a class="credit-sign" href="http://mirkhadjayev.uz/" target="_blank" rel="noopener noreferrer" aria-label="created by jmirkhadjayev - mirkhadjayev.uz">
+      <span class="credit-tag">&lt;/&gt;</span>
+      <span class="credit-label">created by</span>
+      <span class="credit-name">jmirkhadjayev</span>
+      <span class="credit-caret" aria-hidden="true"></span>
+    </a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/chat.js"></script>
+</body>
+</html>

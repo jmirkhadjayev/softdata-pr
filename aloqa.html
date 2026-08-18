@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uz" data-site-lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aloqa | SoftData</title>
+<meta name="description" content="SoftData bilan bog'laning: telefon, email, Telegram yoki forma orqali murojaat qoldiring. Toshkent, Yunusobod tumani.">
+<meta name="theme-color" content="#05070C">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact" data-title-uz="Aloqa | SoftData" data-title-ru="Контакты | SoftData" data-title-en="Contact | SoftData">
+<!-- ===== ANIMATED BACKGROUND (video + aurora + grid + node-network) ===== -->
+<div class="bg-fx" aria-hidden="true">
+  <video class="fx-video" autoplay muted loop playsinline preload="auto" poster="assets/media/hero-poster.jpg">
+    <source src="assets/media/hero-loop.webm" type="video/webm">
+    <source src="assets/media/hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="fx-aurora"><span></span><span></span><span></span></div>
+  <div class="fx-grid"></div>
+  <canvas class="fx-canvas"></canvas>
+  <div class="fx-scan"></div>
+  <div class="fx-veil"></div>
+</div>
+
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo-mark" aria-label="SoftData"><img src="assets/media/softdata-logo-mark.png" alt="SoftData" width="455" height="96"></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link" data-nav="home"><span data-lang="uz">Bosh sahifa</span><span data-lang="ru">Главная</span><span data-lang="en">Home</span></a>
+      <a href="biz-haqimizda.html" class="nav-link" data-nav="about"><span data-lang="uz">Biz haqimizda</span><span data-lang="ru">О нас</span><span data-lang="en">About</span></a>
+      <a href="yechimlar.html" class="nav-link" data-nav="solutions"><span data-lang="uz">Yechimlar</span><span data-lang="ru">Решения</span><span data-lang="en">Solutions</span></a>
+      <a href="loyihalar.html" class="nav-link" data-nav="projects"><span data-lang="uz">Loyihalar</span><span data-lang="ru">Проекты</span><span data-lang="en">Projects</span></a>
+      <a href="hamkorlar.html" class="nav-link" data-nav="partners"><span data-lang="uz">Hamkorlar</span><span data-lang="ru">Партнеры</span><span data-lang="en">Partners</span></a>
+      <a href="aloqa.html" class="nav-link" data-nav="contact"><span data-lang="uz">Aloqa</span><span data-lang="ru">Контакты</span><span data-lang="en">Contact</span></a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-switch" id="langSwitch" type="button" aria-label="UZ / RU / EN">
+        <span class="lang-option" data-lang-btn="uz">UZ</span><span class="lang-sep">/</span><span class="lang-option" data-lang-btn="ru">RU</span><span class="lang-sep">/</span><span class="lang-option" data-lang-btn="en">EN</span>
+      </button>
+      <a href="aloqa.html" class="btn btn-accent header-cta"><span data-lang="uz">Murojaat qoldirish</span><span data-lang="ru">Оставить заявку</span><span data-lang="en">Send a request</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menyu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow"><span data-lang="uz">Aloqa</span><span data-lang="ru">Контакты</span><span data-lang="en">Contact</span></div>
+      <h1 class="type-on"><span data-lang="uz">Gaplashib olaylik</span><span data-lang="ru">Давайте поговорим</span><span data-lang="en">Let's talk</span></h1>
+      <p class="hero-lede">
+        <span data-lang="uz">Formani to'ldiring, qo'ng'iroq qiling yoki Telegram orqali yozing — 48 soat ichida javob beramiz.</span>
+        <span data-lang="ru">Заполните форму, позвоните или напишите в Telegram — ответим в течение 48 часов.</span>
+        <span data-lang="en">Fill in the form, call us or write on Telegram — we reply within 48 hours.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container contact-grid">
+
+      <div data-reveal>
+        <form id="contactForm" class="form-shell">
+          <div class="field">
+            <label for="name"><span data-lang="uz">Ismingiz</span><span data-lang="ru">Ваше имя</span><span data-lang="en">Your name</span></label>
+            <input type="text" id="name" name="name" placeholder="Ism Familiya" data-ph-uz="Ism Familiya" data-ph-ru="Имя Фамилия" data-ph-en="First and last name" required>
+          </div>
+          <div class="field">
+            <label for="phone"><span data-lang="uz">Telefon raqamingiz</span><span data-lang="ru">Ваш телефон</span><span data-lang="en">Your phone</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+998 90 000-00-00" data-ph-uz="+998 90 000-00-00" data-ph-ru="+998 90 000-00-00" data-ph-en="+998 90 000-00-00" required>
+          </div>
+          <div class="field">
+            <label for="message"><span data-lang="uz">Xabaringiz</span><span data-lang="ru">Ваше сообщение</span><span data-lang="en">Your message</span></label>
+            <textarea id="message" name="message" placeholder="Loyihangiz haqida qisqacha..." data-ph-uz="Loyihangiz haqida qisqacha..." data-ph-ru="Кратко о вашем проекте..." data-ph-en="Briefly about your project..." required></textarea>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="company">Kompaniya</label>
+            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="submit" class="btn btn-accent btn-arrow"><span data-lang="uz">Yuborish</span><span data-lang="ru">Отправить</span><span data-lang="en">Send</span></button>
+          <p class="form-note"><span data-lang="uz">Ma'lumotlaringiz faqat siz bilan bog'lanish uchun ishlatiladi.</span><span data-lang="ru">Ваши данные используются только для связи с вами.</span><span data-lang="en">Your details are used only to get in touch with you.</span></p>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+
+      <div data-reveal>
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <span class="label"><span data-lang="uz">Telefon</span><span data-lang="ru">Телефон</span><span data-lang="en">Phone</span></span>
+            <a class="value" href="tel:+998507979779">+998 50 797-97-79</a>
+          </div>
+          <div class="contact-info-item">
+            <span class="label">Email</span>
+            <a class="value" href="mailto:info@softdata.uz">info@softdata.uz</a>
+          </div>
+          <div class="contact-info-item">
+            <span class="label">Telegram</span>
+            <a class="value" href="https://t.me/softdata" target="_blank" rel="noopener">@softdata</a>
+          </div>
+          <div class="contact-info-item">
+            <span class="label"><span data-lang="uz">Manzil</span><span data-lang="ru">Адрес</span><span data-lang="en">Address</span></span>
+            <span class="value small"><span data-lang="uz">Toshkent, Yunusobod tumani, Bog'ishamol ko'chasi, 235A</span><span data-lang="ru">Ташкент, Юнусабадский район, ул. Богишамол, 235A</span><span data-lang="en">Tashkent, Yunusabad district, Bogishamol street 235A</span></span>
+          </div>
+          <div class="contact-info-item">
+            <span class="label"><span data-lang="uz">Ish vaqti</span><span data-lang="ru">Часы работы</span><span data-lang="en">Working hours</span></span>
+            <span class="value small"><span data-lang="uz">Dushanba – Shanba, 09:00 – 18:00</span><span data-lang="ru">Понедельник – Суббота, 09:00 – 18:00</span><span data-lang="en">Monday – Saturday, 09:00 – 18:00</span></span>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe src="https://yandex.uz/map-widget/v1/?ll=69.336568%2C41.357813&z=17&pt=69.336568%2C41.357813%2Cpm2rdm&lang=ru_RU" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="SoftData manzili"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo-mark logo-full" aria-label="SoftData"><img src="assets/media/softdata-logo.png" alt="SoftData - Artificial Intelligence System" width="796" height="168"></a>
+      <p><span data-lang="uz">Har qanday mavjud resurslarni tizimli avtomatlashtirish yordamida yuqori xavfsizlikka erishiladi.</span><span data-lang="ru">Высокий уровень безопасности достигается системной автоматизацией любых имеющихся ресурсов.</span><span data-lang="en">Systematic automation across your existing resources delivers a high level of security.</span></p>
+    </div>
+    <div class="footer-col">
+      <span class="footer-title"><span data-lang="uz">Sahifalar</span><span data-lang="ru">Страницы</span><span data-lang="en">Pages</span></span>
+      <a href="biz-haqimizda.html"><span data-lang="uz">Biz haqimizda</span><span data-lang="ru">О нас</span><span data-lang="en">About</span></a>
+      <a href="yechimlar.html"><span data-lang="uz">Yechimlar</span><span data-lang="ru">Решения</span><span data-lang="en">Solutions</span></a>
+      <a href="loyihalar.html"><span data-lang="uz">Loyihalar</span><span data-lang="ru">Проекты</span><span data-lang="en">Projects</span></a>
+      <a href="hamkorlar.html"><span data-lang="uz">Hamkorlar</span><span data-lang="ru">Партнеры</span><span data-lang="en">Partners</span></a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-title"><span data-lang="uz">Yo'nalishlar</span><span data-lang="ru">Направления</span><span data-lang="en">Services</span></span>
+      <a href="yechimlar.html#automation">Automation</a>
+      <a href="yechimlar.html#security">Security</a>
+      <a href="yechimlar.html#parking">Parking</a>
+      <a href="yechimlar.html#integration">Integration</a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-title"><span data-lang="uz">Aloqa</span><span data-lang="ru">Контакты</span><span data-lang="en">Contact</span></span>
+      <a href="tel:+998507979779">+998 50 797-97-79</a>
+      <a href="mailto:info@softdata.uz">info@softdata.uz</a>
+      <span><span data-lang="uz">Toshkent, Yunusobod t., Bog'ishamol ko'chasi 235A</span><span data-lang="ru">Ташкент, Юнусабадский р-н, ул. Богишамол 235A</span><span data-lang="en">Tashkent, Yunusabad dist., Bogishamol st. 235A</span></span>
+    </div>
+  </div>
+  <div class="container footer-credit">
+    <a class="credit-sign" href="http://mirkhadjayev.uz/" target="_blank" rel="noopener noreferrer" aria-label="created by jmirkhadjayev - mirkhadjayev.uz">
+      <span class="credit-tag">&lt;/&gt;</span>
+      <span class="credit-label">created by</span>
+      <span class="credit-name">jmirkhadjayev</span>
+      <span class="credit-caret" aria-hidden="true"></span>
+    </a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/chat.js"></script>
+</body>
+</html>
