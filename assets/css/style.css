@@ -1241,6 +1241,8 @@ html[data-site-lang="en"] .lang-switch [data-lang-btn="en"] {
   animation: pkPlateFlash 6s ease-in-out infinite;
   height: 36px;
   width: 100%;
+  max-width: 170px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 .pk-plate-reg {
