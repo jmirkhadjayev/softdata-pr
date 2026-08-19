@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" width="720" height="450" role="img" fill="none">
+<defs>
+  <linearGradient id="gAcc" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#22D9FF"/><stop offset="0.55" stop-color="#6C7CFF"/><stop offset="1" stop-color="#A855F7"/>
+  </linearGradient>
+  <linearGradient id="gFade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#22D9FF" stop-opacity="0.42"/><stop offset="1" stop-color="#22D9FF" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="gFade2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#7C5CFF" stop-opacity="0.34"/><stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="gGlow" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#22D9FF" stop-opacity="0.5"/><stop offset="1" stop-color="#22D9FF" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="gGlow2" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#7C5CFF" stop-opacity="0.5"/><stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="pGrid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#7FB2FF" stroke-opacity="0.08" stroke-width="1"/>
+  </pattern>
+  <filter id="fBlur" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="18"/>
+  </filter>
+  
+</defs><rect width="720" height="450" fill="#070B12"/><rect width="720" height="450" fill="url(#pGrid)"/><ellipse cx="158" cy="81" rx="245" ry="180" fill="url(#gGlow)" filter="url(#fBlur)"/><ellipse cx="590" cy="369" rx="230" ry="171" fill="url(#gGlow2)" filter="url(#fBlur)"/><circle cx="360.0" cy="215.0" r="70" fill="none" stroke="#1B2637" stroke-dasharray="3 7"/><g><animateTransform attributeName="transform" type="rotate" from="0 360.0 215.0" to="360 360.0 215.0" dur="9s" repeatCount="indefinite"/><circle cx="430.0" cy="215.0" r="7" fill="#22D9FF"/></g><circle cx="360.0" cy="215.0" r="118" fill="none" stroke="#1B2637" stroke-dasharray="3 7"/><g><animateTransform attributeName="transform" type="rotate" from="0 360.0 215.0" to="360 360.0 215.0" dur="15s" repeatCount="indefinite"/><circle cx="478.0" cy="215.0" r="6" fill="#7C5CFF"/></g><circle cx="360.0" cy="215.0" r="166" fill="none" stroke="#1B2637" stroke-dasharray="3 7"/><g><animateTransform attributeName="transform" type="rotate" from="0 360.0 215.0" to="360 360.0 215.0" dur="21s" repeatCount="indefinite"/><circle cx="526.0" cy="215.0" r="5" fill="#34E0A1"/></g><circle cx="360.0" cy="215.0" r="34" fill="url(#gAcc)" fill-opacity="0.22" stroke="#22D9FF" stroke-opacity="0.5"/><circle cx="360.0" cy="215.0" r="60" fill="url(#gGlow)"/><rect x="0" y="378" width="720" height="72" fill="#05080E" fill-opacity="0.86"/><line x1="0" y1="378" x2="720" y2="378" stroke="#1B2637"/><rect x="48" y="404" width="4" height="18" rx="2" fill="#7C5CFF"/><text x="64" y="418" font-family="JetBrains Mono, Consolas, monospace" font-size="13" font-weight="600" fill="#C6D4E8" text-anchor="start">biznes-markaz · acs</text></svg>
