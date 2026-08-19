@@ -31,7 +31,7 @@ function rateLimited(ip) {
 /* Kompaniya haqidagi barcha ma'lumot shu yerda — model faqat shundan
    javob beradi. Sayt matni o'zgarsa, shu matnni ham yangilang. */
 const COMPANY = `
-SOFT DATA MChJ — Toshkentdagi IT kompaniya. To'rt yo'nalish:
+SoftData MChJ — Toshkentdagi IT kompaniya. To'rt yo'nalish:
 
 PARKING (avtomatik parkovka): shlagbaum, ANPR kameralar (davlat raqamini
 tanish), abonement, onlayn to'lov, bo'sh joylar tablosi real vaqtda,
@@ -74,7 +74,7 @@ email info@softdata.uz · manzil: Toshkent, Yunusobod tumani,
 Bog'ishamol ko'chasi 235A · ish vaqti: Dushanba-Shanba 09:00-18:00.
 `.trim();
 
-const SYSTEM = `Sen SOFT DATA kompaniyasining sayti (softdata.uz) uchun AI yordamchisisan.
+const SYSTEM = `Sen SoftData kompaniyasining sayti (softdata.uz) uchun AI yordamchisisan.
 
 QOIDALAR:
 - Faqat quyidagi ma'lumotga tayanib javob ber. Ma'lumotda yo'q narsani

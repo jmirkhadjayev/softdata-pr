@@ -36,7 +36,27 @@
     document.documentElement.setAttribute("lang", lang);
     var title = document.body.getAttribute("data-title-" + lang) ||
                 document.body.getAttribute("data-title-uz");
-    if (title) document.title = title;
+    if (title) {
+      document.title = title;
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) {
+        ogTitle.setAttribute("content", title);
+      }
+    }
+
+    var desc = document.body.getAttribute("data-desc-" + lang) ||
+               document.body.getAttribute("data-desc-uz");
+    if (desc) {
+      var metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute("content", desc);
+      }
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) {
+        ogDesc.setAttribute("content", desc);
+      }
+    }
+
     applyPlaceholders(lang);
   }
   function initLang() {
