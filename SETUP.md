@@ -35,7 +35,7 @@ Chat uchun kalit ixtiyoriy — ulanmasa chat ichki bazadan javob beradi.
 ## 3. Vercel'ga deploy
 
 1. https://vercel.com → GitHub bilan kiring → **Add New → Project** →
-   `softdata-pr` repozitoriysini tanlang → **Deploy**.
+   `softdatauz` repozitoriysini tanlang → **Deploy**.
    Vercel `api/` papkasini avtomatik funksiya sifatida ishga tushiradi.
 2. **Settings → Environment Variables** ga qo'shing:
 
