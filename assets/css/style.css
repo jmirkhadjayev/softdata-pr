@@ -1620,7 +1620,9 @@ html[data-site-lang="en"] .lang-switch [data-lang-btn="en"] {
 
 /* ---------- CTA band ---------- */
 .cta-band { text-align: center; }
-.cta-band h2 { max-width: 20ch; margin-inline: auto; }
+.cta-band h2 { max-width: 22ch; margin-inline: auto; }
+.cta-band h2 + .hero-lede { margin-top: 18px; margin-bottom: clamp(24px, 4vw, 36px); }
+.cta-band h2 + .hero-actions { margin-top: clamp(28px, 4vw, 36px); }
 .cta-band .hero-lede { margin-inline: auto; text-align: center; }
 .cta-band .hero-actions { justify-content: center; }
 
